@@ -45,4 +45,4 @@ cp .env.example .env
 
 ## ER図
 
-（ここに後ほどER図の画像を添付します）
+![ER図](er.png)
