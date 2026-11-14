@@ -9,7 +9,7 @@
 
 ```bash
 # 1. リポジトリのクローン
-git clone https://github.com
+git clone https://github.com/ryohei470/mogitate.git
 cd mogitate
 
 # 2. 環境変数ファイルの作成
