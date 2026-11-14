@@ -9,26 +9,26 @@
 
 ```bash
 # 1. リポジトリのクローン
-\$ git clone https://github.com
-\$ cd mogitate
+git clone https://github.com
+cd mogitate
 
 # 2. 環境変数ファイルの作成
-\$ cp .env.example .env
+cp .env.example .env
 
 # 3. Dockerコンテナのビルド・起動
-\$ ./vendor/bin/sail up -d
+./vendor/bin/sail up -d
 
 # 4. Composerパッケージのインストール
-\$ ./vendor/bin/sail composer install
+./vendor/bin/sail composer install
 
 # 5. アプリケーションキーの生成
-\$ ./vendor/bin/sail artisan key:generate
+./vendor/bin/sail artisan key:generate
 
 # 6. マイグレーションとダミーデータの投入
-\$ ./vendor/bin/sail artisan migrate:fresh --seed
+./vendor/bin/sail artisan migrate:fresh --seed
 
 # 7. ストレージのシンボリックリンク作成
-\$ ./vendor/bin/sail artisan storage:link
+./vendor/bin/sail artisan storage:link
 ```
 
 ## 使用技術（実行環境）
