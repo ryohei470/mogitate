@@ -7,21 +7,35 @@
 
 ## 環境構築
 
-1. リポジトリのクローン
-   `git clone https://github.com`
-2. Dockerビルド
-   `./vendor/bin/sail up -d`
-3. パッケージのインストール・マイグレーション・シーディング
-   `./vendor/bin/sail composer install`
-   `./vendor/bin/sail artisan key:generate`
-   `./vendor/bin/sail artisan migrate:fresh --seed`
-   `./vendor/bin/sail artisan storage:link`
+```bash
+# 1. リポジトリのクローン
+\$ git clone https://github.com
+\$ cd mogitate
+
+# 2. 環境変数ファイルの作成
+\$ cp .env.example .env
+
+# 3. Dockerコンテナのビルド・起動
+\$ ./vendor/bin/sail up -d
+
+# 4. Composerパッケージのインストール
+\$ ./vendor/bin/sail composer install
+
+# 5. アプリケーションキーの生成
+\$ ./vendor/bin/sail artisan key:generate
+
+# 6. マイグレーションとダミーデータの投入
+\$ ./vendor/bin/sail artisan migrate:fresh --seed
+
+# 7. ストレージのシンボリックリンク作成
+\$ ./vendor/bin/sail artisan storage:link
+```
 
 ## 使用技術（実行環境）
 
-- PHP 8.x
-- Laravel 11.x / 12.x
-- MySQL 8.0
+- PHP 8.5.11
+- Laravel 13.38.0
+- MySQL 8.4.13
 - Docker（Laravel Sail）
 
 ## URL
