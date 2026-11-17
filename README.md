@@ -17,10 +17,12 @@ cp .env.example .env
 
 # 3. Composerパッケージのインストール（vendor/bin/sail を生成）
 docker run --rm \
-    -v "$(pwd):/var/www/html" \
+    -u "$(id -u):$(id -g)" \
+    -e COMPOSER_HOME=/tmp \
+    -v "$(pwd)":/var/www/html \
     -w /var/www/html \
-    laravelsail/php84-composer:latest \
-    composer install --ignore-platform-reqs
+    composer:2.11.2 composer install
+
 
 # 4. Dockerコンテナのビルド・起動
 ./vendor/bin/sail up -d
