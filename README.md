@@ -33,7 +33,7 @@ docker run --rm \
 
 # 7. ストレージのシンボリックリンク作成
 ./vendor/bin/sail artisan storage:link
-``
+```
 
 ## 使用技術（実行環境）
 
