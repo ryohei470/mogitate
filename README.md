@@ -15,11 +15,15 @@ cd mogitate
 # 2. 環境変数ファイルの作成
 cp .env.example .env
 
-# 3. Dockerコンテナのビルド・起動
-./vendor/bin/sail up -d
+# 3. Composerパッケージのインストール（vendor/bin/sail を生成）
+docker run --rm \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php84-composer:latest \
+    composer install --ignore-platform-reqs
 
-# 4. Composerパッケージのインストール
-./vendor/bin/sail composer install
+# 4. Dockerコンテナのビルド・起動
+./vendor/bin/sail up -d
 
 # 5. アプリケーションキーの生成
 ./vendor/bin/sail artisan key:generate
@@ -29,7 +33,7 @@ cp .env.example .env
 
 # 7. ストレージのシンボリックリンク作成
 ./vendor/bin/sail artisan storage:link
-```
+``
 
 ## 使用技術（実行環境）
 
