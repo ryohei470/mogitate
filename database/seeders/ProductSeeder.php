@@ -5,11 +5,14 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
 use App\Models\Season;
+use Illuminate\Support\Facades\File;
 
 class ProductSeeder extends Seeder
 {
     public function run(): void
     {
+        File::copyDirectory(public_path('images'), storage_path('app/public'));
+
         // 🌾 1. 倉庫から4つの季節（春・夏·秋·冬）のデータをスタンバイさせるよ
         $spring = Season::where('name', '春')->first();
         $summer = Season::where('name', '夏')->first();
