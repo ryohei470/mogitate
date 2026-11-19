@@ -11,7 +11,7 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        File::copyDirectory(public_path('images'), storage_path('app/public'));
+        File::copyDirectory(database_path('seeders/images'), storage_path('app/public'));
 
         // 🌾 1. 倉庫から4つの季節（春・夏·秋·冬）のデータをスタンバイさせるよ
         $spring = Season::where('name', '春')->first();
