@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    // 1. 商品一覧・検索・並び替え画面（ページネーション対応）
     public function index(Request $request)
     {
         $query = Product::with('seasons');
@@ -92,7 +91,6 @@ class ProductController extends Controller
         return view('products.show', compact('product', 'seasons'));
     }
 
-    // 5. 商品更新処理（バリデーション追加済み）
     public function update(Request $request, $productId)
     {
         // 更新時は画像を新しく選び直さなくても良いように 'nullable' にする

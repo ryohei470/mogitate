@@ -9,7 +9,7 @@ Route::get('/products', [ProductController::class, 'index']);
 // PG05: 商品検索
 Route::get('/products/search', [ProductController::class, 'index']);
 
-// PG04: 商品登録画面の表示と保存処理（← 追加）
+// PG04: 商品登録画面の表示と保存処理
 Route::get('/products/register', [ProductController::class, 'create']);
 Route::post('/products/register', [ProductController::class, 'store']);
 

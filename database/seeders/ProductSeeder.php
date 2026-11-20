@@ -19,7 +19,6 @@ class ProductSeeder extends Seeder
         $autumn = Season::where('name', '秋')->first();
         $winter = Season::where('name', '冬')->first();
 
-        // 🥝 ① キウイ（秋、冬）
         $kiwi = Product::create([
             'name' => 'キウイ',
             'price' => 800,
@@ -28,7 +27,6 @@ class ProductSeeder extends Seeder
         ]);
         $kiwi->seasons()->attach([$autumn->id, $winter->id]);
 
-        // 🍓 ② ストロベリー（春）
         $strawberry = Product::create([
             'name' => 'ストロベリー',
             'price' => 1200,
@@ -37,7 +35,6 @@ class ProductSeeder extends Seeder
         ]);
         $strawberry->seasons()->attach($spring->id);
 
-        // 🍊 ③ オレンジ（冬）
         $orange = Product::create([
             'name' => 'オレンジ',
             'price' => 850,
@@ -46,7 +43,6 @@ class ProductSeeder extends Seeder
         ]);
         $orange->seasons()->attach($winter->id);
 
-        // 🍉 ④ スイカ（夏）
         $watermelon = Product::create([
             'name' => 'スイカ',
             'price' => 700,
@@ -55,7 +51,6 @@ class ProductSeeder extends Seeder
         ]);
         $watermelon->seasons()->attach($summer->id);
 
-        // 🍑 ⑤ ピーチ（夏）
         $peach = Product::create([
             'name' => 'ピーチ',
             'price' => 1000,
@@ -64,7 +59,6 @@ class ProductSeeder extends Seeder
         ]);
         $peach->seasons()->attach($summer->id);
 
-        // 🍇 ⑥ シャインマスカット（夏、秋）
         $shine_muscat = Product::create([
             'name' => 'シャインマスカット',
             'price' => 1400,
@@ -73,7 +67,6 @@ class ProductSeeder extends Seeder
         ]);
         $shine_muscat->seasons()->attach([$summer->id, $autumn->id]);
 
-        // 🍍 ⑦ パイナップル（春、夏）
         $pineapple = Product::create([
             'name' => 'パイナップル',
             'price' => 800,
@@ -82,7 +75,6 @@ class ProductSeeder extends Seeder
         ]);
         $pineapple->seasons()->attach([$spring->id, $summer->id]);
 
-        // 🍇 ⑧ ブドウ（夏、秋）
         $grapes = Product::create([
             'name' => 'ブドウ',
             'price' => 1100,
@@ -91,7 +83,6 @@ class ProductSeeder extends Seeder
         ]);
         $grapes->seasons()->attach([$summer->id, $autumn->id]);
 
-        // 🍌 ⑨ バナナ（夏）
         $banana = Product::create([
             'name' => 'バナナ',
             'price' => 600,
@@ -100,7 +91,6 @@ class ProductSeeder extends Seeder
         ]);
         $banana->seasons()->attach($summer->id);
 
-        // 🍈 ⑩ メロン（春、夏）
         $melon = Product::create([
             'name' => 'メロン',
             'price' => 900,
