@@ -52,3 +52,11 @@ docker run --rm \
 ## ER図
 
 ![ER図](er.png)
+
+## コードフォーマット（Laravel Pint）
+
+VSCode以外のエディタを使用している場合など、以下のコマンドでPHPおよびBladeファイルの自動整形を実行できます。
+
+```bash
+./vendor/bin/sail pint --blade
+```
