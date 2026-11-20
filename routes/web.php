@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
 
 // PG01: 商品一覧画面
 Route::get('/products', [ProductController::class, 'index']);

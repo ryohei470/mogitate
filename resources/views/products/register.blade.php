@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品登録 - もぎたて</title>
-　  <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    　
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
 </head>
 
 <body>
@@ -25,9 +25,9 @@
                     <label class="form-label">商品名</label>
                     <span class="required-badge">必須</span>
                 </div>
-                <input type="text" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="商品名を入力" />
                 @error('name')
-                <p class="error-message">{{ $message }}</p>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -37,9 +37,9 @@
                     <label class="form-label">値段</label>
                     <span class="required-badge">必須</span>
                 </div>
-                <input type="number" name="price" value="{{ old('price') }}" placeholder="値段を入力">
+                <input type="number" name="price" value="{{ old('price') }}" placeholder="値段を入力" />
                 @error('price')
-                <p class="error-message">{{ $message }}</p>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -50,11 +50,11 @@
                     <span class="required-badge">必須</span>
                 </div>
                 <div class="image-preview-box" id="previewBox">
-                    <img id="previewImage" src="" alt="プレビュー">
+                    <img id="previewImage" src="" alt="プレビュー" />
                 </div>
-                <input type="file" name="image" id="imageInput" accept=".png,.jpeg,.jpg">
+                <input type="file" name="image" id="imageInput" accept=".png,.jpeg,.jpg" />
                 @error('image')
-                <p class="error-message">{{ $message }}</p>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -67,15 +67,19 @@
                 </div>
                 <div class="season-list">
                     @foreach ($seasons as $season)
-                    <label class="season-item">
-                        <input type="checkbox" name="seasons[]" value="{{ $season->id }}"
-                            {{ is_array(old('seasons')) && in_array($season->id, old('seasons')) ? 'checked' : '' }}>
-                        {{ $season->name }}
-                    </label>
+                        <label class="season-item">
+                            <input
+                                type="checkbox"
+                                name="seasons[]"
+                                value="{{ $season->id }}"
+                                {{ is_array(old('seasons')) && in_array($season->id, old('seasons')) ? 'checked' : '' }}
+                            />
+                            {{ $season->name }}
+                        </label>
                     @endforeach
                 </div>
                 @error('seasons')
-                <p class="error-message">{{ $message }}</p>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -87,7 +91,7 @@
                 </div>
                 <textarea name="description" rows="5" placeholder="商品の説明を入力">{{ old('description') }}</textarea>
                 @error('description')
-                <p class="error-message">{{ $message }}</p>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -101,14 +105,14 @@
 
     <!-- 画像選択時にプレビューを表示するスクリプト -->
     <script>
-        document.getElementById('imageInput').addEventListener('change', function(event) {
+        document.getElementById('imageInput').addEventListener('change', function (event) {
             const file = event.target.files[0];
             const previewBox = document.getElementById('previewBox');
             const previewImage = document.getElementById('previewImage');
 
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     previewImage.src = e.target.result;
                     previewBox.style.display = 'block';
                 };
@@ -120,5 +124,4 @@
         });
     </script>
 </body>
-
 </html>

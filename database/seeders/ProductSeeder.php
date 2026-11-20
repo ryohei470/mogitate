@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Product;
 use App\Models\Season;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
 class ProductSeeder extends Seeder

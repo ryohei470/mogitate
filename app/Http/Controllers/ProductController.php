@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -15,7 +15,7 @@ class ProductController extends Controller
 
         // 商品名キーワード検索
         if ($request->filled('keyword')) {
-            $query->where('name', 'LIKE', '%' . $request->keyword . '%');
+            $query->where('name', 'LIKE', '%'.$request->keyword.'%');
         }
 
         // 最低料金・最高料金の検索
@@ -43,6 +43,7 @@ class ProductController extends Controller
     public function create()
     {
         $seasons = Season::all();
+
         return view('products.register', compact('seasons'));
     }
 
